@@ -72,7 +72,7 @@ function createIssues(lat, lng, id_line)
     });
     $('.create-issue').modal('show');
 	$('#lat').val(lat);
-	$('#lat').val(lng);
+	$('#lng').val(lng);
 	$('#track_id').val(id_line);
 }
 
