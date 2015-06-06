@@ -30,7 +30,7 @@ function drawLines()
                 click: function (pe) {
                     var lat = pe.latLng.A;
                     var lng = pe.latLng.F;
-                    createIssues();
+                    createIssues(lat, lng, line.id);
                 },
                 mouseover: function (me) {
                     this.setOptions({strokeWeight: 6, strokeOpacity: 0.9});
@@ -52,7 +52,27 @@ function invertCoords(coords)
     return result;
 }
 
-function createIssues()
+function createIssues(lat, lng, id_line)
+{	
+	$('.create-issue').modal('show');
+	$('.create-issue').on('shown.bs.modal', function () {
+		issueMapPreview('#issue-map',lat, lng);
+	});
+}
+
+function issueMapPreview(contain, lat, lng) 
 {
-    $('.create-issue').modal('show');
+	var issue_map = new GMaps({
+		div: contain,
+		zoom: 16,
+		lat: lat,
+		lng: lng,
+		disableDefaultUI: true,
+		draggable: false
+	});
+	issue_map.addMarker({
+		lat: lat,
+		lng: lng,
+		icon: baseURL + 'img/marker.png'
+	});
 }

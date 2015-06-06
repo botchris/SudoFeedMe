@@ -211,3 +211,32 @@ Stack Trace:
 #5 {main}
 
 
+2015-06-06 15:33:20 Error: Fatal Error (4): syntax error, unexpected '' => '' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in [C:\xampp\htdocs\SudoFeedMe\src\Template\Layout\default.ctp, line 51]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-06-06 15:33:20 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '' => '' (T_CONSTANT_ENCAPSED_STRING), expecting ']'
+Request URL: /SudoFeedMe/
+Stack Trace:
+#0 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 51)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-06-06 15:33:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Favicon.ico could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.ico',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /SudoFeedMe/favicon.ico
+Stack Trace:
+#0 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
