@@ -12,6 +12,7 @@ class IssuesController extends AppController
 
     public function add()
     {
+        
         $this->redirect($this->referer());
     }
 
