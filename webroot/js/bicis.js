@@ -1,6 +1,6 @@
 $(document).ready(function() {
     initMap();
-    drawLines(map);
+    drawLines(map, true);
 });
 
 function initMap()
@@ -19,7 +19,7 @@ function initMap()
     return map;
 }
 
-function drawLines(targetMap)
+function drawLines(targetMap, doEvents)
 {
     $.get(dataSource, function(response) {
         data = response;
@@ -30,15 +30,21 @@ function drawLines(targetMap)
                 strokeOpacity: 0.75,
                 strokeWeight: 3.5,
                 click: function (pe) {
-                    var lat = pe.latLng.A;
-                    var lng = pe.latLng.F;
-                    createIssues(lat, lng, line.id);
+                    if (doEvents) {
+                        var lat = pe.latLng.A;
+                        var lng = pe.latLng.F;
+                        createIssues(lat, lng, line.id);
+                    }
                 },
                 mouseover: function (me) {
-                    this.setOptions({strokeWeight: 6, strokeOpacity: 0.9});
+                    if (doEvents) {
+                        this.setOptions({strokeWeight: 6, strokeOpacity: 0.9});
+                    }
                 },
                 mouseout: function (me) {
-                    this.setOptions({strokeWeight: 3.5, strokeOpacity: 0.75});
+                    if (doEvents) {
+                        this.setOptions({strokeWeight: 3.5, strokeOpacity: 0.75});
+                    }
                 }
             });
 
@@ -48,7 +54,9 @@ function drawLines(targetMap)
                     lng: issue.lng,
                     icon: baseURL + 'img/marker.png',
                     click: function (me) {
-                        viewIssue(issue.id);
+                        if (doEvents) {
+                            viewIssue(issue.id);
+                        }
                     }
                 });
             })
@@ -76,7 +84,7 @@ function createIssues(lat, lng, id_line)
 	$('#track_id').val(id_line);
 }
 
-function voteIssue(issueId)
+function agreeIssue(issueId)
 {
     $.get(baseURL + 'Issues/vote/' + issueId + '/agree', function(response) {
         var $counter = $('.view-issue .btn-success span.badge');
@@ -106,6 +114,11 @@ function viewIssue(issueId)
     });
 }
 
+function showInfo()
+{
+    $('.info-screen').modal('show');
+}
+
 function issueMapPreview(contain, lat, lng) 
 {
 	var issueMap = new GMaps({
@@ -117,7 +130,7 @@ function issueMapPreview(contain, lat, lng)
 		draggable: false
 	});
 
-    drawLines(issueMap);
+    drawLines(issueMap, false);
 
 	issueMap.addMarker({
 		lat: lat,

@@ -29,10 +29,14 @@
     </head>
 
     <body>
+        <?= $this->Html->image('info-icon.png', ['width' => '50', 'class' => 'info-icon', 'onclick' => 'showInfo();']); ?>
+
         <div id="the-map" class="map-container">
             &nbsp;
         </div>
+
         <?= $this->element('add_issue'); ?>
         <?= $this->element('view_issue'); ?>
+        <?= $this->element('info'); ?>
     </body>
 </html>

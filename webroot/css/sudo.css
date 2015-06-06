@@ -18,3 +18,11 @@ html, body {
 	height: 100%;
 	width: 100%;
 }
+
+img.info-icon {
+	z-index: 1;
+	position: fixed;
+	bottom: 10px;
+	left:48%;
+	cursor: pointer;
+}

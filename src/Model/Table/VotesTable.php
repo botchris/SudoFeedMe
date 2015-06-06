@@ -1,6 +1,7 @@
 <?php
 namespace App\Model\Table;
 
+use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 
 /**
@@ -18,7 +19,7 @@ class VotesTable extends Table
         ]);
 
         $this->addBehavior('CounterCache', [
-            'Issues' => [
+            'Issue' => [
                 'solved' => [
                     'conditions' => ['Votes.type' => 'solved']
                 ],
@@ -27,5 +28,11 @@ class VotesTable extends Table
                 ]
             ]
         ]);
+    }
+
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->isUnique(['issue_id', 'ip', 'type']));
+        return $rules;
     }
 }

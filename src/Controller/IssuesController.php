@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller;
 
+use Cake\Network\Exception\NotFoundException;
+
 class IssuesController extends AppController
 {
 
@@ -13,7 +15,21 @@ class IssuesController extends AppController
     public function add()
     {
         $this->loadModel('Issues');
-        $issue = $this->Issues->newEntity($this->request->data());
+        $data = $this->request->data();
+        $data['agree'] = 0;
+        $data['solved'] = 0;
+        $imageOk = true;
+
+        if ($data['image']) {
+            require_once APP . 'Lib/Upload/class.upload.php';
+            $handler = new Upload($data['image']);
+            if ($handler->uploaded) {
+                $foo->Process(WWW_ROOT . '/files/issues/');
+                $imageOk = $foo->processed;
+            }
+        }
+
+        $issue = $this->Issues->newEntity($data);
         $this->Issues->save($issue);
         $this->redirect($this->referer());
     }
@@ -34,7 +50,11 @@ class IssuesController extends AppController
             'ip' => $this->request->clientIp(),
             'type' => ($type != 'solved' ? 'agree' : 'solved')
         ]);
-        $this->Votes->save($vote);
-        die('ok');
+
+        if ($this->Votes->save($vote)) {
+            die('ok');
+        }
+
+        throw new NotFoundException('Voto rechazado');
     }
 }
