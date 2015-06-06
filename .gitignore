@@ -3,7 +3,6 @@
 /build
 /dist
 /tags
-/vendor
 /tests/*/tmp
 /tests/*/logs
 composer.lock
