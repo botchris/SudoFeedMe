@@ -1,6 +1,6 @@
 $(document).ready(function() {
     initMap();
-    drawLines();
+    drawLines(map);
 });
 
 function initMap()
@@ -15,14 +15,16 @@ function initMap()
             position: 'RIGHT'
         }
     });
+
+    return map;
 }
 
-function drawLines()
+function drawLines(targetMap)
 {
     $.get(dataSource, function(response) {
         data = response;
         $.each(data, function (k, line) {
-            map.drawPolyline({
+            targetMap.drawPolyline({
                 path: invertCoords(line.shape),
                 strokeColor: '#' + line.color,
                 strokeOpacity: 0.75,
@@ -41,7 +43,7 @@ function drawLines()
             });
 
             $.each(line.issues, function (i, issue) {
-                map.addMarker({
+                targetMap.addMarker({
                     lat: issue.lat,
                     lng: issue.lng,
                     icon: baseURL + 'img/marker.png',
@@ -74,13 +76,23 @@ function createIssues(lat, lng, id_line)
 	$('#track_id').val(id_line);
 }
 
+function voteIssue(issueId)
+{
+
+}
+
+function solveIssue(issueId)
+{
+
+}
+
 function viewIssue(issueId)
 {
     $.get(baseURL + 'Issues/view/' + issueId, function(issue) {
         var issueHTML = Mustache.render($('#view-issue').html(), issue);
         $('div.view-issue .modal-body').html(issueHTML);
         $('.view-issue').on('shown.bs.modal', function () {
-            issueMapPreview('#issue-marker-preview', 42.819888583750426, -1.6565568460894156);
+            issueMapPreview('#issue-marker-preview', issue.lat, issue.lng);
         });
         $('.view-issue').modal('show');
     });
@@ -97,9 +109,11 @@ function issueMapPreview(contain, lat, lng)
 		draggable: false
 	});
 
+    drawLines(issueMap);
+
 	issueMap.addMarker({
 		lat: lat,
 		lng: lng,
-		icon: baseURL + 'img/marker.png'
+		icon: baseURL + 'img/marker-blue.png'
 	});
 }
