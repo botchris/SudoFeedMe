@@ -17,6 +17,8 @@
 							<p><?= $this->Form->input('description', ['type' => 'textarea', 'label' => 'Descripción *', 'class' => 'form-control']); ?></p>
 							<p class="help-block">Si lo deseas, puedes añadir una foto de la incidencia:</p>
 							<p><?= $this->Form->file('image', ['label' => 'Imágen', 'class' => '']); ?></p>
+						
+							<?= $this->Form->submit('Abrir Incidencia', ['class' => 'btn btn-primary']); ?>
 						<?= $this->Form->end(); ?>
 					</div>
 				</div>
