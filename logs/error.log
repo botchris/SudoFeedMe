@@ -1,213 +1,143 @@
-2015-06-06 09:53:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Index could not be found.
+2015-06-06 15:23:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Files could not be found.
 Exception Attributes: array (
-  'class' => 'Index',
+  'class' => 'Files',
   'plugin' => NULL,
   'prefix' => NULL,
   '_ext' => NULL,
 )
-Request URL: /SudoFeedMe/
+Request URL: /SudoFeedMe/files/issues/%7B%7Bimage%7D%7D
 Stack Trace:
 #0 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
 #1 {main}
 
 
-2015-06-06 09:53:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Favicon.ico could not be found.
+2015-06-06 15:24:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Files could not be found.
 Exception Attributes: array (
-  'class' => 'Favicon.ico',
+  'class' => 'Files',
   'plugin' => NULL,
   'prefix' => NULL,
   '_ext' => NULL,
 )
-Request URL: /SudoFeedMe/favicon.ico
+Request URL: /SudoFeedMe/files/issues/%7B%7Bimage%7D%7D
 Stack Trace:
 #0 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
 #1 {main}
 
 
-2015-06-06 09:53:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2015-06-06 15:25:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Files could not be found.
 Exception Attributes: array (
-  'class' => 'Css',
+  'class' => 'Files',
   'plugin' => NULL,
   'prefix' => NULL,
   '_ext' => NULL,
 )
-Request URL: /SudoFeedMe/css/base.css
+Request URL: /SudoFeedMe/files/issues/%7B%7Bimage%7D%7D
 Stack Trace:
 #0 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
 #1 {main}
 
 
-2015-06-06 09:53:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2015-06-06 15:26:05 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Files could not be found.
 Exception Attributes: array (
-  'class' => 'Css',
+  'class' => 'Files',
   'plugin' => NULL,
   'prefix' => NULL,
   '_ext' => NULL,
 )
-Request URL: /SudoFeedMe/css/cake.css
+Request URL: /SudoFeedMe/files/issues/%7B%7Bimage%7D%7D
 Stack Trace:
 #0 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
 #1 {main}
 
 
-2015-06-06 10:22:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Examples.css could not be found.
+2015-06-06 15:26:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Files could not be found.
 Exception Attributes: array (
-  'class' => 'Examples.css',
+  'class' => 'Files',
   'plugin' => NULL,
   'prefix' => NULL,
   '_ext' => NULL,
 )
-Request URL: /SudoFeedMe/examples.css
+Request URL: /SudoFeedMe/files/issues/%7B%7Bimage%7D%7D
 Stack Trace:
 #0 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
 #1 {main}
 
 
-2015-06-06 11:28:31 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Tracks.tack_type' in 'field list'
-Request URL: /SudoFeedMe/
-Stack Trace:
-#0 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
-#1 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
-#2 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
-#3 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Database\Connection.php(274): Cake\Database\Log\LoggingStatement->execute()
-#4 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Database\Query.php(175): Cake\Database\Connection->run(Object(Cake\ORM\Query))
-#5 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\ORM\Query.php(657): Cake\Database\Query->execute()
-#6 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(218): Cake\ORM\Query->_execute()
-#7 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\ORM\Query.php(608): Cake\ORM\Query->_all()
-#8 C:\xampp\htdocs\SudoFeedMe\src\Controller\IndexController.php(37): Cake\ORM\Query->all()
-#9 [internal function]: App\Controller\IndexController->map()
-#10 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Controller\Controller.php(410): call_user_func_array(Array, Array)
-#11 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#12 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\IndexController))
-#13 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#14 {main}
-
-
-2015-06-06 11:28:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Favicon.ico could not be found.
+2015-06-06 15:26:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Files could not be found.
 Exception Attributes: array (
-  'class' => 'Favicon.ico',
+  'class' => 'Files',
   'plugin' => NULL,
   'prefix' => NULL,
   '_ext' => NULL,
 )
-Request URL: /SudoFeedMe/favicon.ico
+Request URL: /SudoFeedMe/files/issues/%7B%7Bimage%7D%7D
 Stack Trace:
 #0 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
 #1 {main}
 
 
-2015-06-06 13:46:44 Error: Fatal Error (1): Call to undefined method App\Controller\IndexController::get() in [C:\xampp\htdocs\SudoFeedMe\src\Controller\IndexController.php, line 44]
-Trace:
-Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 191
-Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 90
-[main] - [internal], line ??
-
-
-
-2015-06-06 13:46:44 Error: [Cake\Error\FatalErrorException] Call to undefined method App\Controller\IndexController::get()
-Request URL: /SudoFeedMe/index/lines
-Stack Trace:
-#0 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 44)
-#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
-#2 {main}
-
-
-2015-06-06 13:46:57 Error: Fatal Error (1): Call to undefined method App\Controller\IndexController::get() in [C:\xampp\htdocs\SudoFeedMe\src\Controller\IndexController.php, line 44]
-Trace:
-Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 191
-Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 90
-[main] - [internal], line ??
-
-
-
-2015-06-06 13:46:57 Error: [Cake\Error\FatalErrorException] Call to undefined method App\Controller\IndexController::get()
-Request URL: /SudoFeedMe/index/lines
-Stack Trace:
-#0 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 44)
-#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
-#2 {main}
-
-
-2015-06-06 13:51:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class IASD53WASDDG could not be found.
+2015-06-06 15:26:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Files could not be found.
 Exception Attributes: array (
-  'class' => 'IASD53WASDDG',
+  'class' => 'Files',
   'plugin' => NULL,
   'prefix' => NULL,
   '_ext' => NULL,
 )
-Request URL: /SudoFeedMe/IASD53WASDDG
+Request URL: /SudoFeedMe/files/issues/%7B%7Bimage%7D%7D
 Stack Trace:
 #0 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
 #1 {main}
 
 
-2015-06-06 13:51:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Favicon.ico could not be found.
+2015-06-06 15:27:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Files could not be found.
 Exception Attributes: array (
-  'class' => 'Favicon.ico',
+  'class' => 'Files',
   'plugin' => NULL,
   'prefix' => NULL,
   '_ext' => NULL,
 )
-Request URL: /SudoFeedMe/favicon.ico
+Request URL: /SudoFeedMe/files/issues/%7B%7Bimage%7D%7D
 Stack Trace:
 #0 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
 #1 {main}
 
 
-2015-06-06 13:51:48 Error: [Cake\Controller\Exception\MissingActionException] Action IndexController::index() could not be found, or is not accessible.
+2015-06-06 15:29:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Files could not be found.
 Exception Attributes: array (
-  'controller' => 'IndexController',
-  'action' => 'index',
-  'prefix' => '',
+  'class' => 'Files',
   'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
 )
-Request URL: /SudoFeedMe/Index
+Request URL: /SudoFeedMe/files/issues/%7B%7Bimage%7D%7D
 Stack Trace:
-#0 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#1 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\IndexController))
-#2 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#3 {main}
+#0 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
 
 
-2015-06-06 13:52:04 Error: [Cake\View\Exception\MissingTemplateException] Template file "Index\index.ctp" is missing.
+2015-06-06 15:29:49 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Files could not be found.
 Exception Attributes: array (
-  'file' => 'Index\\index.ctp',
+  'class' => 'Files',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
 )
-Request URL: /SudoFeedMe/Index
+Request URL: /SudoFeedMe/files/issues/%7B%7Bimage%7D%7D
 Stack Trace:
-#0 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\View\View.php(460): Cake\View\View->_getViewFileName(NULL)
-#1 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Controller\Controller.php(581): Cake\View\View->render(NULL, NULL)
-#2 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
-#3 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\IndexController))
-#4 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#5 {main}
+#0 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
 
 
-2015-06-06 13:54:28 Error: [Cake\View\Exception\MissingTemplateException] Template file "Index\lines.ctp" is missing.
+2015-06-06 15:30:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Files could not be found.
 Exception Attributes: array (
-  'file' => 'Index\\lines.ctp',
+  'class' => 'Files',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
 )
-Request URL: /SudoFeedMe/index/lines
+Request URL: /SudoFeedMe/files/issues/%7B%7Bimage%7D%7D
 Stack Trace:
-#0 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\View\View.php(460): Cake\View\View->_getViewFileName(NULL)
-#1 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Controller\Controller.php(581): Cake\View\View->render(NULL, NULL)
-#2 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
-#3 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\IndexController))
-#4 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#5 {main}
-
-
-2015-06-06 13:56:53 Error: [Cake\View\Exception\MissingTemplateException] Template file "Index\lines.ctp" is missing.
-Exception Attributes: array (
-  'file' => 'Index\\lines.ctp',
-)
-Request URL: /SudoFeedMe/index/lines
-Stack Trace:
-#0 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\View\View.php(460): Cake\View\View->_getViewFileName(NULL)
-#1 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Controller\Controller.php(581): Cake\View\View->render(NULL, NULL)
-#2 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
-#3 C:\xampp\htdocs\SudoFeedMe\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\IndexController))
-#4 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#5 {main}
+#0 C:\xampp\htdocs\SudoFeedMe\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
 
 

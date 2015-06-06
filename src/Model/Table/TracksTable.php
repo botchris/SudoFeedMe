@@ -27,6 +27,9 @@ class TracksTable extends Table
         $this->hasMany('Issues', [
             'className' => 'Issues',
             'propertyName' => 'issues',
+            'conditions' => [
+                'Issues.solved <= (Issues.votes * 1.5)'
+            ]
         ]);
     }
 }

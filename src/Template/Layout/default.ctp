@@ -7,6 +7,7 @@
 
         <script type="text/javascript">
             var dataSource = '<?= $this->Url->build(['controller' => 'Index', 'action' => 'lines']); ?>';
+            var baseURL = '<?= $this->Url->build('/', true); ?>';
             var map;
             var data;
         </script>
@@ -19,12 +20,12 @@
         <?= $this->Html->script('bootstrap.min'); ?>
         <?= $this->Html->script('http://maps.google.com/maps/api/js?sensor=true'); ?>
         <?= $this->Html->script('gmaps'); ?>
+        <?= $this->Html->script('mustache'); ?>
         <?= $this->Html->script('bicis'); ?>
 
         <?= $this->fetch('meta') ?>
         <?= $this->fetch('css') ?>
         <?= $this->fetch('script') ?>
-
     </head>
 
     <body>
@@ -32,22 +33,7 @@
             &nbsp;
         </div>
 
-        <div class="modal fade bs-example-modal-lg create-issue">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Registrar Incidencia</h4>
-                    </div>
-
-                    <div class="modal-body">
-                        <div id="issue-map"></div>
-                        <?= $this->Form->create(null); ?>
-                            <?= $this->Form->input('description', ['label' => 'Descripción', 'class' => 'form-control']); ?>
-                            <?= $this->Form->file('image', ['label' => 'Imágen', 'class' => 'form-control']); ?>
-                        <?= $this->Form->end(); ?>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?= $this->element('add_issue'); ?>
+        <?= $this->element('view_issue'); ?>
     </body>
 </html>
