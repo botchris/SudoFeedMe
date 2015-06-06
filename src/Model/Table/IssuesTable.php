@@ -34,8 +34,7 @@ class IssuesTable extends Table
         $validator
             ->add('description', 'validDescription', [
                 'rule' => 'notBlank',
-                'message' => __('You need to provide a valid role'),
-                'provider' => 'table',
+                'message' => 'Debe proporcionar una descripción',
             ]);
         return $validator;
     }

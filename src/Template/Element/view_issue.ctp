@@ -26,7 +26,7 @@
         </div>
 
         <div class="col-md-6 text-right">
-            <button type="button" class="btn btn-success" onclick="solveIssue({{id}});">Resuelto <span class="badge">{{solved}}</span></button>
+            <button type="button" class="btn btn-success">Resuelto <span class="badge">{{solved}}</span></button>
         </div>
     </div>
 </script>

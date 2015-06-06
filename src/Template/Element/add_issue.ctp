@@ -17,11 +17,15 @@
 							<p><?= $this->Form->input('description', ['type' => 'textarea', 'label' => 'Descripción *:', 'class' => 'form-control']); ?></p>
 							
 							<p class="help-block">Si lo deseas, puedes añadir una foto de la incidencia:</p>
+
+							<?= $this->Form->input('lat', ['type' => 'hidden', 'id' => 'lat']); ?>
+							<?= $this->Form->input('lng', ['type' => 'hidden', 'id' => 'lng']); ?>
+							<?= $this->Form->input('track_id', ['type' => 'hidden', 'id' => 'track_id']); ?>
 							
 							<p><?= $this->Form->file('image', ['label' => 'Imágen', 'class' => '']); ?></p>
 							
 							<br />
-							
+
 							<div class="text-center"><?= $this->Form->submit('Abrir incidencia', ['class' => 'btn btn-primary']); ?></div>
 						<?= $this->Form->end(); ?>
 					</div>
