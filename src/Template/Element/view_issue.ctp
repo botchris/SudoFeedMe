@@ -22,7 +22,7 @@
 
     <div class="row">
         <div class="col-md-6 text-left">
-            <button type="button" class="btn btn-success" onclick="voteIssue({{id}});">A favor <span class="badge">{{votes}}</span></button>
+            <button type="button" class="btn btn-success" onclick="voteIssue({{id}});">A favor <span class="badge">{{agree}}</span></button>
         </div>
 
         <div class="col-md-6 text-right">
