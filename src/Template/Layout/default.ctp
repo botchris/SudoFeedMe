@@ -8,7 +8,7 @@
         <script type="text/javascript">
             var dataSource = '<?= $this->Url->build(['controller' => 'Index', 'action' => 'lines']); ?>';
             var map;
-            var lines;
+            var data;
         </script>
 
         <?= $this->Html->css('bootstrap.min'); ?>
