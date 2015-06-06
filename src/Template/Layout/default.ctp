@@ -46,6 +46,7 @@
                             <?= $this->Form->file('image', ['label' => 'Imágen', 'class' => 'form-control']); ?>
                         <?= $this->Form->end(); ?>
                     </div>
+                </div>
             </div>
         </div>
     </body>
