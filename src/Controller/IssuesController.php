@@ -12,12 +12,9 @@ class IssuesController extends AppController
 
     public function add()
     {
-<<<<<<< HEAD
         $this->loadModel('Issues');
         $issue = $this->Issues->newEntity($this->request->data());
         $this->Issues->save($issue);
-=======
->>>>>>> origin/master
         $this->redirect($this->referer());
     }
 
@@ -25,7 +22,6 @@ class IssuesController extends AppController
     {
         $this->loadModel('Issues');
         $issue = $this->Issues->get($id);
-
         $this->set(compact('issue'));
         $this->RequestHandler->renderAs($this, 'json');
     }
