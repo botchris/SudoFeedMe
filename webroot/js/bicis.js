@@ -38,7 +38,18 @@ function drawLines()
                 mouseout: function (me) {
                     this.setOptions({strokeWeight: 3.5, strokeOpacity: 0.75});
                 }
-            }); 
+            });
+
+            $.each(line.issues, function (i, issue) {
+                map.addMarker({
+                    lat: issue.lat,
+                    lng: issue.lng,
+                    icon: baseURL + 'img/marker.png',
+                    click: function (me) {
+                        viewIssue(issue.id);
+                    }
+                });
+            })
         });
     });
 }
@@ -58,6 +69,19 @@ function createIssues(lat, lng, id_line)
 	$('.create-issue').on('shown.bs.modal', function () {
 		issueMapPreview('#issue-map',lat, lng);
 	});
+}
+
+function viewIssue(issueId)
+{
+    $.get(baseURL + 'Issues/view/' + issueId, function(issue) {
+        var issueHTML = Mustache.render($('#view-issue').html(), issue);
+        $('div.view-issue .modal-body').html(issueHTML);
+
+        $('.view-issue').on('shown.bs.modal', function () {
+            // RENDER MAP
+        });
+        $('.view-issue').modal('show');
+    });
 }
 
 function issueMapPreview(contain, lat, lng) 

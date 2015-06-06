@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-06-2015 a las 13:33:06
+-- Tiempo de generación: 06-06-2015 a las 17:42:52
 -- Versión del servidor: 5.6.24
 -- Versión de PHP: 5.6.8
 
@@ -31,8 +31,19 @@ CREATE TABLE IF NOT EXISTS `issues` (
   `id` int(11) NOT NULL,
   `track_id` int(11) NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
-  `image` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `image` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lat` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `lng` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `votes` int(11) NOT NULL DEFAULT '0',
+  `solved` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `issues`
+--
+
+INSERT INTO `issues` (`id`, `track_id`, `description`, `image`, `lat`, `lng`, `votes`, `solved`) VALUES
+(1, 2, 'Lorem ipsum dolorem', NULL, '42.819888583750426', '-1.6565568460894156', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -212,7 +223,7 @@ ALTER TABLE `tracks`
 -- AUTO_INCREMENT de la tabla `issues`
 --
 ALTER TABLE `issues`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `tracks`
 --
