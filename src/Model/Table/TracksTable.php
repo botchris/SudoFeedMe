@@ -28,7 +28,7 @@ class TracksTable extends Table
             'className' => 'Issues',
             'propertyName' => 'issues',
             'conditions' => [
-                'Issues.solved <= (Issues.votes * 1.5)'
+                'Issues.solved <= (Issues.agree * 1.5)'
             ]
         ]);
     }
