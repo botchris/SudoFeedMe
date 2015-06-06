@@ -18,6 +18,9 @@
 							<p class="help-block">Si lo deseas, puedes añadir una foto de la incidencia:</p>
 							<?= $this->Form->file('image', ['label' => 'Imágen', 'class' => '']); ?>
 							<br/>
+							<?= $this->Form->input('lat', ['type' => 'hidden', 'id' => 'lat']); ?>
+							<?= $this->Form->input('lng', ['type' => 'hidden', 'id' => 'lng']); ?>
+							<?= $this->Form->input('track_id', ['type' => 'hidden', 'id' => 'track_id']); ?>
 							<div class="text-center"><?= $this->Form->submit('Abrir incidencia', ['class' => 'btn btn-primary']); ?></div>
 						<?= $this->Form->end(); ?>
 					</div>
