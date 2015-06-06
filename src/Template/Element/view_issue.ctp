@@ -1,7 +1,9 @@
 <script id="view-issue" type="x-tmpl-mustache">
     <div class="row">
         <div class="col-md-5">
-            <div id="issue-marker-preview">
+            <div class="issue-map-content">
+                <div class="gmap" id="issue-marker-preview">
+                </div>
             </div>
 
             <div>

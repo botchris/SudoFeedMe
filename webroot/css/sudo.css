@@ -14,7 +14,7 @@ html, body {
 	border: 1px solid;
 }
 
-#issue-map {
+.gmap {
 	height: 100%;
 	width: 100%;
 }

@@ -9,7 +9,7 @@
 				<div class="row">
 					<div class="col-md-5">
 						<div class="issue-map-content">
-							<div id="issue-map"></div>
+							<div class="gmap" id="issue-map"></div>
 						</div>
 					</div>
 					<div class="col-md-7">

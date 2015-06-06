@@ -65,10 +65,10 @@ function invertCoords(coords)
 
 function createIssues(lat, lng, id_line)
 {	
-	$('.create-issue').modal('show');
-	$('.create-issue').on('shown.bs.modal', function () {
-		issueMapPreview('#issue-map',lat, lng);
-	});
+    $('.create-issue').on('shown.bs.modal', function () {
+        issueMapPreview('#issue-map',lat, lng);
+    });
+    $('.create-issue').modal('show');
 }
 
 function viewIssue(issueId)
@@ -76,9 +76,8 @@ function viewIssue(issueId)
     $.get(baseURL + 'Issues/view/' + issueId, function(issue) {
         var issueHTML = Mustache.render($('#view-issue').html(), issue);
         $('div.view-issue .modal-body').html(issueHTML);
-
         $('.view-issue').on('shown.bs.modal', function () {
-            // RENDER MAP
+            issueMapPreview('#issue-marker-preview', 42.819888583750426, -1.6565568460894156);
         });
         $('.view-issue').modal('show');
     });
@@ -86,7 +85,7 @@ function viewIssue(issueId)
 
 function issueMapPreview(contain, lat, lng) 
 {
-	var issue_map = new GMaps({
+	var issueMap = new GMaps({
 		div: contain,
 		zoom: 16,
 		lat: lat,
@@ -94,7 +93,8 @@ function issueMapPreview(contain, lat, lng)
 		disableDefaultUI: true,
 		draggable: false
 	});
-	issue_map.addMarker({
+
+	issueMap.addMarker({
 		lat: lat,
 		lng: lng,
 		icon: baseURL + 'img/marker.png'
