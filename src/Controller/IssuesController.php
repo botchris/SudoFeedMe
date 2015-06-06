@@ -12,7 +12,9 @@ class IssuesController extends AppController
 
     public function add()
     {
-        
+        $this->loadModel('Issues');
+        $issue = $this->Issues->newEntity($this->request->data());
+        $this->Issues->save($issue);
         $this->redirect($this->referer());
     }
 
