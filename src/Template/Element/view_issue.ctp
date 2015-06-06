@@ -22,11 +22,11 @@
 
     <div class="row">
         <div class="col-md-6 text-left">
-            <button type="button" class="btn btn-danger" onclick="voteIssue({{id}});">A favor <span class="badge">{{votes}}</span></button>
+            <button type="button" class="btn btn-success" onclick="voteIssue({{id}});">A favor <span class="badge">{{votes}}</span></button>
         </div>
 
         <div class="col-md-6 text-right">
-            <button type="button" class="btn btn-success">Resuelto <span class="badge">{{solved}}</span></button>
+            <button type="button" class="btn btn-info" onclick="solveIssue({{id}});">Resuelto <span class="badge">{{solved}}</span></button>
         </div>
     </div>
 </script>

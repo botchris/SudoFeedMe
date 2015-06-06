@@ -18,6 +18,11 @@ class IssuesTable extends Table
             'className' => 'Tracks',
             'propertyName' => 'track',
         ]);
+
+        $this->hasMany('Votes', [
+            'className' => 'Votes',
+            'propertyName' => 'votes',
+        ]);
     }
 
     public function buildRules(RulesChecker $rules)

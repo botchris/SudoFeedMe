@@ -78,12 +78,20 @@ function createIssues(lat, lng, id_line)
 
 function voteIssue(issueId)
 {
-
+    $.get(baseURL + 'Issues/vote/' + issueId + '/agree', function(response) {
+        var $counter = $('.view-issue .btn-success span.badge');
+        var current = parseInt($counter.html());
+        $counter.html(current + 1);
+    });
 }
 
 function solveIssue(issueId)
 {
-
+    $.get(baseURL + 'Issues/vote/' + issueId + '/solved', function(response) {
+        var $counter = $('.view-issue .btn-info span.badge');
+        var current = parseInt($counter.html());
+        $counter.html(current + 1);
+    });
 }
 
 function viewIssue(issueId)

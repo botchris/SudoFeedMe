@@ -25,4 +25,16 @@ class IssuesController extends AppController
         $this->set(compact('issue'));
         $this->RequestHandler->renderAs($this, 'json');
     }
+
+    public function vote($id, $type)
+    {
+        $this->loadModel('Votes');
+        $vote = $this->Votes->newEntity([
+            'issue_id' => $id,
+            'ip' => $this->request->clientIp(),
+            'type' => ($type != 'solved' ? 'agree' : 'solved')
+        ]);
+        $this->Votes->save($vote);
+        die('ok');
+    }
 }
