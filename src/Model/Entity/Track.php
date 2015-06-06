@@ -28,13 +28,13 @@ class Track extends Entity
     {
         switch ((int)$this->get('track_type')) {
             case 1:
-                return '223AFF';
+                return '223AFF'; // azul: Carril
             case 2:
-                return '980294';
+                return '980294'; // morado: Pista
             case 3:
-                return 'FF0000';
+                return 'FF0000'; // rojo: Acera
             default:
-                return '00AA16';
+                return '00AA16'; // verde. Senda
         }
     }
 }

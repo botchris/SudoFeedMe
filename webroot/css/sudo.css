@@ -11,12 +11,16 @@ html, body {
 .issue-map-content {
 	height: 300px;
 	width: 100%;
-	border: 1px solid;
+	border: 1px solid #ccc;
 }
 
 .gmap {
 	height: 100%;
 	width: 100%;
+}
+
+.view-issue .issue-map-content {
+	height: 200px !important;
 }
 
 img.info-icon {
@@ -25,4 +29,55 @@ img.info-icon {
 	bottom: 10px;
 	left:48%;
 	cursor: pointer;
+}
+
+img.menu-icon {
+	z-index: 1;
+	position: fixed;
+	top: 10px;
+	left:48%;
+	cursor: pointer;
+}
+
+#left-menu hr {
+	color: #ccc;
+	border-top:1px solid #333;
+	height:0;
+	background: #222;
+}
+
+#left-menu .menu-container {
+	padding: 10px;
+}
+
+#left-menu {
+	color: #ccc;
+}
+
+#left-menu img.logo {
+	cursor: pointer;
+}
+
+.view-issue img.issue-image {
+	width: 100%;
+}
+
+i.circle-1 {
+	color: #223AFF;
+}
+
+i.circle-2{
+	color: #980294;
+}
+
+i.circle-3 {
+	color: #FF0000;
+}
+
+i.circle-4 {
+	color: #00AA16;
+}
+
+i.circle-x {
+	color: #ffa500;
 }

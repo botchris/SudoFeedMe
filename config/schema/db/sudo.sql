@@ -2,10 +2,10 @@
 -- version 4.3.11
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 06-06-2015 a las 19:58:39
--- Versión del servidor: 5.6.24
--- Versión de PHP: 5.6.8
+-- Host: 127.0.0.1
+-- Generation Time: Jun 07, 2015 at 12:38 AM
+-- Server version: 5.6.24
+-- PHP Version: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `sudo`
+-- Database: `sudo`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `issues`
+-- Table structure for table `issues`
 --
 
 DROP TABLE IF EXISTS `issues`;
@@ -36,19 +36,21 @@ CREATE TABLE IF NOT EXISTS `issues` (
   `lng` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `agree` int(11) NOT NULL DEFAULT '0',
   `solved` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `issues`
+-- Dumping data for table `issues`
 --
 
 INSERT INTO `issues` (`id`, `track_id`, `description`, `image`, `lat`, `lng`, `agree`, `solved`) VALUES
-(1, 2, 'Lorem ipsum dolorem', NULL, '42.819888583750426', '-1.6565568460894156', 0, 0);
+(1, 2, 'Lorem ipsum dolorem', NULL, '42.819888583750426', '-1.6565568460894156', 1, 0),
+(2, 25, 'sdf asdfa sdfa sdf', 'Captura_de_pantalla_1.png', '42.82964121964469', '-1.6444342235135991', 1, 0),
+(3, 30, 'asd dfas fasd f', '', '42.82569868420051', '-1.6359268637264677', 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tracks`
+-- Table structure for table `tracks`
 --
 
 DROP TABLE IF EXISTS `tracks`;
@@ -59,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `tracks` (
 ) ENGINE=InnoDB AUTO_INCREMENT=134 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `tracks`
+-- Dumping data for table `tracks`
 --
 
 INSERT INTO `tracks` (`id`, `track_type`, `shape`) VALUES
@@ -202,7 +204,7 @@ INSERT INTO `tracks` (`id`, `track_type`, `shape`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `votes`
+-- Table structure for table `votes`
 --
 
 DROP TABLE IF EXISTS `votes`;
@@ -211,49 +213,58 @@ CREATE TABLE IF NOT EXISTS `votes` (
   `issue_id` int(11) NOT NULL,
   `ip` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `type` varchar(10) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Índices para tablas volcadas
+-- Dumping data for table `votes`
+--
+
+INSERT INTO `votes` (`id`, `issue_id`, `ip`, `type`) VALUES
+(1, 1, '::1', 'agree'),
+(2, 2, '::1', 'agree'),
+(3, 3, '::1', 'agree');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `issues`
+-- Indexes for table `issues`
 --
 ALTER TABLE `issues`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `tracks`
+-- Indexes for table `tracks`
 --
 ALTER TABLE `tracks`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `votes`
+-- Indexes for table `votes`
 --
 ALTER TABLE `votes`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `issues`
+-- AUTO_INCREMENT for table `issues`
 --
 ALTER TABLE `issues`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT de la tabla `tracks`
+-- AUTO_INCREMENT for table `tracks`
 --
 ALTER TABLE `tracks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=134;
 --
--- AUTO_INCREMENT de la tabla `votes`
+-- AUTO_INCREMENT for table `votes`
 --
 ALTER TABLE `votes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

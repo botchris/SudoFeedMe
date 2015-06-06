@@ -18,14 +18,13 @@ class IssuesController extends AppController
         $data = $this->request->data();
         $data['agree'] = 0;
         $data['solved'] = 0;
-        $imageOk = true;
 
         if ($data['image']) {
             require_once APP . 'Lib/Upload/class.upload.php';
-            $handler = new Upload($data['image']);
+            $handler = new \Upload($data['image']);
             if ($handler->uploaded) {
-                $foo->Process(WWW_ROOT . '/files/issues/');
-                $imageOk = $foo->processed;
+                $handler->Process(WWW_ROOT . '/files/issues/');
+                $data['image'] = $handler->file_dst_name;
             }
         }
 
