@@ -16,5 +16,16 @@ class VotesTable extends Table
             'className' => 'Issues',
             'propertyName' => 'issue',
         ]);
+
+        $this->addBehavior('CounterCache', [
+            'Issues' => [
+                'solved' => [
+                    'conditions' => ['Votes.type' => 'solved']
+                ],
+                'agree' => [
+                    'conditions' => ['Votes.type' => 'agree']
+                ]
+            ]
+        ]);
     }
 }
